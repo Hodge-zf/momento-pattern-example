@@ -5,7 +5,7 @@ import edu.jalc.momentopattern.logging.messages.Error;
 
 import java.util.ArrayList;
 
-public class Logger {
+public class Logger implements Observable{
 
 	private String message;
 	private State state;
@@ -41,4 +41,7 @@ public class Logger {
 	public ArrayList<Message> getWarnings(){
 		return caretaker.getAll(State.WARN);
 	}
+	public void observe(Message message){
+    System.out.println(message);
+  }
 }
